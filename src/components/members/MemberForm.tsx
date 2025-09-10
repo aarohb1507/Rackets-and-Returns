@@ -62,11 +62,12 @@ export default function MemberForm({ onAdd, onClose }: Props) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 text-gray-600">
+    // Add bottom padding so sticky footer won't overlap inputs. Keep relative so footer sticks within this flow.
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 text-gray-600 relative pb-28">
       {/* Header */}
       <div className="text-center">
-        <h2 className="text-2xl font-serif font-semibold">Add New Member</h2>
-        <p className="text-sm">Add a new member to the Rackets and Returns community. Fill out their information below.</p>
+        <h2 className="text-white text-2xl font-serif font-semibold">Add New Member</h2>
+        <p className="text-white text-sm">Add a new member to the Rackets and Returns community. Fill out their information below.</p>
       </div>
 
       {/* Personal Information Card */}
@@ -168,14 +169,14 @@ export default function MemberForm({ onAdd, onClose }: Props) {
       </div>
 
       {/* Footer action bar (dark green like screenshot) */}
-      <div className="sticky bottom-4">
+      <div className="sticky bottom-0 left-0 right-0">
         <div className="bg-gradient-to-r from-emerald-900 to-emerald-700 px-6 py-4 rounded-2xl shadow-lg flex items-center justify-between">
           <div className="text-sm">
             <span className="font-medium">*</span> Required fields — The member will be added with active status.
           </div>
 
           <div className="flex gap-3">
-            <button type="button" onClick={() => { reset(); onClose(); }} className="bg-white/10 px-4 py-2 rounded-md">Cancel</button>
+            <button type="button" onClick={() => { reset(); onClose(); }} className="bg-white px-4 py-2 rounded-md text-emerald-800 font-medium">Cancel</button>
             <button type="submit" className="bg-white text-emerald-800 px-4 py-2 rounded-md font-medium">Add Member</button>
           </div>
         </div>

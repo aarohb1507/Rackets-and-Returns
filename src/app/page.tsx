@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <div className="space-y-6">
       <h1 className="text-3xl font-bold">Welcome — Admin Panel</h1>
-      <p className="text-sm text-black max-w-xl">
+      <p className="text-xl text-white max-w-xl">
         This is the Rackets & Returns admin frontend. Use the Members tab to add and preview members locally.
       </p>
 
